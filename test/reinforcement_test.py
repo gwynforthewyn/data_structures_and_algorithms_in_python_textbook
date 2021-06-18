@@ -72,3 +72,17 @@ def test_three(input_, result_):
 def test_four(input_, result_):
     assert reinforcement.sum_of_squares(input_) == result_
 
+
+# Write a short Python function that takes a positive
+# integer n and returns the sum of the squares of all
+# the odd positive integers smaller than n.
+@pytest.mark.parametrize(
+    "input_,result_",
+    [
+        (1, 0),
+        (4, 10),
+        (10, 165)
+    ]
+    )
+def test_four(input_, result_):
+    assert reinforcement.sum_of_odd_squares(input_) == result_
