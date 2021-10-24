@@ -72,3 +72,41 @@ def moveHanoiTower(disk_number, _from="origin", spare="spare", destination="dest
     note = "after_first_recursion"
     print(f"{note}: Move disk {disk_number} from source {_from} to {destination}")
     moveHanoiTower(next_disk, _from=spare, spare=_from, destination=destination, note="move_spare_to_dest")
+
+# c.4-15
+def powerset(set: list):
+    """
+    >>> powerset([])
+
+    >>> powerset(["a"])
+    ['a']
+
+    >>> powerset(["a", "b"])
+    ['a', 'b']
+    ['b']
+    ['a']
+    """
+
+    # smallest possible set!
+    if len(set) == 0:
+        return
+
+    print(set)
+
+    for i in set:
+        smoller_set = [m for m in set if m != i]
+
+        powerset(smoller_set)
+
+# 4_16
+def reverseString(a: str) -> str:
+    """
+    >>> reverseString("foo")
+    oof
+    """
+    if not len(a):
+        return
+
+    print(a[-1], end="")
+    reverseString(a[:-1])
+
