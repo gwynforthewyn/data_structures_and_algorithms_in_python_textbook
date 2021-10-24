@@ -3,9 +3,6 @@
 # log(n) = x.y, then integer_part = floor(x.y) = x
 
 
-# c.4-11
-# def element_uniqueness():
-
 # c-4.12
 def _compute_product(m, n):
     """
@@ -103,10 +100,43 @@ def reverseString(a: str) -> str:
     """
     >>> reverseString("foo")
     oof
+
+    >> reverseString("roflcopter")
+    retpoclfor
     """
-    if not len(a):
+    if not a:
         return
 
     print(a[-1], end="")
     reverseString(a[:-1])
 
+
+# 4_18
+def vowelsAndConsonantCount(candidate: str):
+    """
+    >>> vowelsAndConsonantCount("")
+    (0, 0)
+
+    >>> vowelsAndConsonantCount("d")
+    (1, 0)
+
+    >>> vowelsAndConsonantCount("a")
+    (0, 1)
+
+    >>> vowelsAndConsonantCount("aazvogel")
+    (4, 4)
+    """
+
+    def _counter(cand: str):
+
+        if not cand:
+            return 0
+
+        if cand[0] in "aeiouAEIOU":
+            return 1 + _counter(cand[1:])
+
+        return 0 + _counter(cand[1:])
+
+    vowels_count = _counter(candidate)
+
+    return (len(candidate)-vowels_count, vowels_count)
