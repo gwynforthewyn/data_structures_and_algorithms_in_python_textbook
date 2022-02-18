@@ -6,5 +6,5 @@ setup(name='data_structures_and_algorithms',
       author='gwyn',
       author_email='gwyn@playtechnique.io',
       license='MIT',
-      packages=['chapone', 'recursion'],
+      packages=['chapone', 'recursion', 'chapfive'],
       zip_safe=False)
